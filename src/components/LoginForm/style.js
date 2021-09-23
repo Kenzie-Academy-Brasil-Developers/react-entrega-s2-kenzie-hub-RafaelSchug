@@ -5,7 +5,8 @@ const Container = styled.div`
 
 form {
     border: 1px solid gray;
-    max-width: 400px;
+    background: white;
+    max-width: 330px;
     margin: 0 auto;
     display:flex;
     flex-direction: column;

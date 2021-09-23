@@ -3,23 +3,30 @@ import styled from 'styled-components';
 const Container = styled.div`
 
     height: 60px;
-    background:var(--gradientblue);
+    background: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     gap: 5px;
+    box-shadow: 0 0 2px 0px #7a7a7a;
+
+    .logo {
+        color: #2975ff;
+    }
   
-    div {
-        display: flex;
-        justify-content: flex-end;
-        gap: 10px;
-        width: 100%;
-        max-width: 1000px;
+    a {
+        color: gray;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 15px;
+        letter-spacing: 1px;
+        white-space: nowrap;
+
     }
 
-    a {
-        color: white;
+    a + a {
+        margin-left: 20px;
     }
 
 `

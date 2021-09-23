@@ -7,7 +7,7 @@ import api from '../../services/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const LoginForm = ({setIsAuth, setUserTechs}) => {
+const LoginForm = ({setIsAuth}) => {
 
     const schema = yup.object().shape({
         email: yup.string().email("Email inválido").required("Campo obrigatório"),
@@ -23,8 +23,6 @@ const LoginForm = ({setIsAuth, setUserTechs}) => {
             console.log(response);
             localStorage.setItem("@kenziehubapi:token", response.data.token)
             localStorage.setItem("@kenziehubapi:userId", response.data.user.id)
-            // localStorage.setItem("@kenziehubapi:userInfo", JSON.stringify(response.data.user))
-            setUserTechs(response.data.user.techs);
             return setIsAuth(true);
         })
         .catch(error => {

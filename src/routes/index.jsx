@@ -8,7 +8,7 @@ import {useEffect, useState} from 'react';
 export const Routes = () => {
 
     const [isAuth, setIsAuth] = useState(false);
-    const [userTechs, setUserTechs] = useState([]);
+    
 
     useEffect(()=> {
         if(!isAuth){
@@ -25,13 +25,13 @@ export const Routes = () => {
     return (
         <Switch>
             <Route exact path='/'>
-                <Login isAuth={isAuth} setIsAuth={setIsAuth} setUserTechs={setUserTechs}></Login>
+                <Login isAuth={isAuth} setIsAuth={setIsAuth} ></Login>
             </Route>
             <Route exact path = '/register'>
                 <Register isAuth={isAuth} setIsAuth={setIsAuth}></Register>
             </Route>
             <Route exact path = '/dashboard' >
-                <Dashboard isAuth={isAuth} setIsAuth={setIsAuth} setUserTechs={setUserTechs} userTechs={userTechs}></Dashboard>
+                <Dashboard isAuth={isAuth} setIsAuth={setIsAuth} ></Dashboard>
             </Route>
         </Switch>
     )
