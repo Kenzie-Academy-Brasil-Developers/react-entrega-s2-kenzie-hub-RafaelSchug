@@ -26,15 +26,22 @@ export const BasicInfoCard = styled.div`
     }
 
     .info_wrapper {
-        border: 1px solid gainsboro;
-        box-shadow: 0 0 6px 0px gainsboro;
+        border: var(--defaultborder);
+        box-shadow: var(--defaultboxshadow);
         background: white;
+        padding-bottom: 10px;
+
+        > div {
+            display: flex;
+            align-items: center;
+            padding: 4px 10px;
+        }
 
         > h3 {
             line-height: 40px;
             font-weight: bold;
             display: block;
-            background: linear-gradient(0, #e6e6e6, #f9f9f9);
+            background: white;
             color: #4c4c4c;
             text-align: center;
             text-transform: uppercase;
@@ -42,8 +49,13 @@ export const BasicInfoCard = styled.div`
         }
 
         p {
-            padding: 10px;
-            font-family: "Montserrat"
+            padding: 5px 10px;
+            font-family: "Montserrat";
+            font-size: 15px;
+        }
+
+        img {
+            height: 20px;
         }
 
 
@@ -58,8 +70,8 @@ export const TechContainer = styled.div`
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    border: 1px solid gainsboro;
-    box-shadow: 0 0 6px 0px gainsboro;
+    border: var(--defaultborder);
+    box-shadow: var(--defaultboxshadow);
     background: white;
 
 
@@ -68,7 +80,7 @@ export const TechContainer = styled.div`
         line-height: 40px;
         font-weight: bold;
         display: block;
-        background: linear-gradient(0, #e6e6e6, #f9f9f9);
+        background: white;
         color: #4c4c4c;
         text-align: center;
         text-transform: uppercase;
@@ -87,7 +99,7 @@ export const TechContainer = styled.div`
 
 export const TechForm = styled.div`
 
-    border: 1px solid #d9d9d9;
+    border: var(--defaultborder);
     padding: 20px;
     padding-top: 0;
     margin: 10px;
@@ -98,7 +110,7 @@ export const TechForm = styled.div`
 
         input {
             height: 30px;
-            border: 1px solid #cecece;
+            border: var(--defaultborder);
             padding: 0 5px;
         }
     }
@@ -109,7 +121,7 @@ export const TechForm = styled.div`
     }
 
     button {
-        background: #4096ff;
+        background: var(--defaultblue);
         color: white;
         font-weight: bold;
         padding: 0 10px;
@@ -119,7 +131,7 @@ export const TechForm = styled.div`
 
 export const TechCard = styled.div`
 
-    border: 1px solid gainsboro;
+    border: var(--defaultborder);
     width: 100%;
     text-align: center;
     flex-grow: 0;

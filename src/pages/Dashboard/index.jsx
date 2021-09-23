@@ -5,6 +5,10 @@ import {useEffect, useState} from 'react';
 import api from "../../services/api";
 import {useForm} from 'react-hook-form';
 import {ToastContainer, toast} from 'react-toastify';
+import emailIcon from '../../assets/icons/email.png'
+import moduleIcon from '../../assets/icons/module.png'
+import contactIcon from '../../assets/icons/contact.png'
+import biographyIcon from '../../assets/icons/biography.png'
 
 
 export const Dashboard = ({isAuth, setIsAuth}) => {
@@ -83,10 +87,22 @@ export const Dashboard = ({isAuth, setIsAuth}) => {
                     <h1>Bem vindo, <span>{userInfo.name}</span></h1>
                     <div className='info_wrapper'>
                         <h3>Suas informações:</h3>
-                        <p><strong>Email</strong>: {userInfo.email}</p>
-                        <p><strong>Contato</strong>: {userInfo.contact}</p>
-                        <p><strong>Bio</strong>: {userInfo.bio}</p>
-                        <p><strong>Módulo do Curso</strong>: {userInfo.course_module}</p>
+                        <div>
+                            <img src={emailIcon} alt="" /> 
+                            <p><strong>Email</strong>: {userInfo.email}</p>
+                        </div>
+                        <div>
+                            <img src={contactIcon} alt="" /> 
+                            <p><strong>Contato</strong>: {userInfo.contact}</p>
+                        </div>
+                        <div>
+                            <img src={biographyIcon} alt="" /> 
+                            <p><strong>Bio</strong>: {userInfo.bio}</p>
+                        </div>
+                        <div>
+                            <img src={moduleIcon} alt="" /> 
+                            <p><strong>Módulo do Curso</strong>: {userInfo.course_module}</p>
+                        </div>
                     </div>
                 </BasicInfoCard>
                 

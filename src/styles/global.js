@@ -15,6 +15,9 @@ export default createGlobalStyle`
         --gradientblue: linear-gradient(0, #1f33ad, #4b53ed);
         --defaultblue: #2975ff;
         --defaultgray: #6f6f6f;
+        --defaultborder: 1px solid #eaeaea;
+        --defaultboxshadow: 0 0 8px 0px #dbdbdb;
+        --defaultredtext: #ff2f2f;
     }
 
     body {
