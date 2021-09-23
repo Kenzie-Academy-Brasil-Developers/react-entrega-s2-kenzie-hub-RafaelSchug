@@ -4,7 +4,7 @@ import { Redirect } from 'react-router'
 import { Main } from '../../components/Main'
 import LoginForm from '../../components/LoginForm'
 
-export const Login = ({isAuth, setIsAuth}) => {
+export const Login = ({isAuth, setIsAuth, setUserTechs}) => {
 
     if(isAuth){
         return <Redirect to='/dashboard' />
@@ -17,7 +17,7 @@ export const Login = ({isAuth, setIsAuth}) => {
             <Link to='/register'>Registrar-se</Link>
         </Header>
         <Main>
-           <LoginForm></LoginForm>
+           <LoginForm setIsAuth={setIsAuth} setUserTechs={setUserTechs}></LoginForm>
         </Main>
         </>
     )

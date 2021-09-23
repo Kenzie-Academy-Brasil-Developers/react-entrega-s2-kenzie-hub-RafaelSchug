@@ -7,6 +7,8 @@ flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 height: calc(100vh - 60px);
+max-width: 1000px;
+margin: 0 auto;
 
 > div {
     flex: 1;
