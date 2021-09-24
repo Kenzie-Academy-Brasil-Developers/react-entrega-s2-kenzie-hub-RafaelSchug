@@ -25,6 +25,10 @@ const Container = styled.div`
 
     }
 
+    a:hover {
+        color: var(--defaultblue);
+    }
+
     a + a {
         margin-left: 20px;
     }

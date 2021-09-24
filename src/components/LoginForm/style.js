@@ -48,6 +48,9 @@ form {
         border: var(--defaultborder);
         height: 40px;
         padding: 0 5px;
+        font-weight: 500;
+        color: var(--defaultdarkergray);
+        font-size: 15px;
     }
 }
 

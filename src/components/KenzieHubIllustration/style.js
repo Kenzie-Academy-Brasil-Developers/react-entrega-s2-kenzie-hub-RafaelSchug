@@ -12,7 +12,10 @@ const Container = styled.div`
 animation: kenziehub_anim .5s 1 ease-in-out;
 
 h2, span {
-    padding: 0 12%;
+    padding: 0 10px;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
 }
 
 h2 {

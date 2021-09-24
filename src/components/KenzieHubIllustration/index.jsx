@@ -5,7 +5,7 @@ const KenzieHubIllustration = () => {
     return (
         <Component>
             <h2>Kenzie Hub</h2>
-            <span>Alinhando você aos seus conhecimentos</span>
+            <span>Acompanhe seu desenvolvimento Fullstack</span>
             <img src={illustration} alt="" />
         </Component>
     )

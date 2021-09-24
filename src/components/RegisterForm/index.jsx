@@ -25,11 +25,8 @@ const RegisterForm = ({setIsAuth}) => {
     const {register, handleSubmit, formState : {errors}} = useForm({resolver: yupResolver(schema)})
 
     const handleFormSubmit = (data) => {
-        console.log(data);
-
         api.post('/users', data)
         .then(_ => {
-
             toast.success("Cadastro efetuado com sucesso", {autoClose: 2500});
 
             // Auto-login
@@ -43,16 +40,12 @@ const RegisterForm = ({setIsAuth}) => {
                 setTimeout(()=> {
                     setIsAuth(true);
                 }, 3000)
-
              })
-
         })
         .catch(_ => {
             toast.error("Email já utilizado", {autoClose: 2000});
         })
     }
-
-    console.log(errors);
 
     return (
         <Container>

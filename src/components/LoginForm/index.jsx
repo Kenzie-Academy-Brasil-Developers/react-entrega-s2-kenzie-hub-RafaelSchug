@@ -17,21 +17,16 @@ const LoginForm = ({setIsAuth}) => {
     const {register, handleSubmit, formState : {errors}} = useForm({resolver: yupResolver(schema)})
 
     const handleFormSubmit = (data) => {
-        console.log(data);
         api.post('/sessions', data)
         .then(response => {
-            console.log(response);
             localStorage.setItem("@kenziehubapi:token", response.data.token)
             localStorage.setItem("@kenziehubapi:userId", response.data.user.id)
             return setIsAuth(true);
         })
-        .catch(error => {
-            console.log(error);
+        .catch(_ => {
             toast.error("Email/Senha incorreto", {autoClose: 2000});
         });
     }
-
-    console.log(errors);
 
     return (
         <Container>

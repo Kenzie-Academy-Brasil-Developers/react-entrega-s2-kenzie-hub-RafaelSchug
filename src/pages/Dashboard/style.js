@@ -5,6 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-bottom: 20px;
 
 `
 
@@ -112,6 +113,43 @@ export const TechContainer = styled.div`
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+        
+
+        @keyframes card_anim {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            80% {
+                transform: scale(1.2);
+            }
+        }
+
+        > div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: card_anim .5s 1 ease-in-out;
+
+            img {
+                max-width: 200px;
+                opacity: 0.1;
+                filter: drop-shadow(2px 4px 6px black);
+            }
+
+            .no_data_msg {
+                position: absolute;
+                color: #545454;
+                text-align: center;
+                font-weight: bold;
+                position: absolute;
+                font-variant: all-small-caps;
+                font-size: 17px;
+            }
+        }
     }
     
 `
@@ -137,6 +175,8 @@ export const TechForm = styled.div`
 
     h4 {
         padding: 10px 0;
+        color: var(--defaultorangetext);
+        font-variant: all-small-caps;
     }
 
     button {

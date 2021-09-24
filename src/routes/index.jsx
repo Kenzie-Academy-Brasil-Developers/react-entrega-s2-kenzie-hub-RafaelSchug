@@ -8,18 +8,14 @@ import {useEffect, useState} from 'react';
 export const Routes = () => {
 
     const [isAuth, setIsAuth] = useState(false);
-    
 
     useEffect(()=> {
         if(!isAuth){
             const token = localStorage.getItem('@kenziehubapi:token');
             if(token){
-                console.log(token)
                 return setIsAuth(true)
             }
         }
-
-
     }, [isAuth])
 
     return (

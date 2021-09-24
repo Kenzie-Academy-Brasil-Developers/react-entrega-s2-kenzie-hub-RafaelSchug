@@ -9,6 +9,7 @@ import emailIcon from '../../assets/icons/email.png'
 import moduleIcon from '../../assets/icons/module.png'
 import contactIcon from '../../assets/icons/contact.png'
 import biographyIcon from '../../assets/icons/biography.png'
+import noDataImg from '../../assets/imgs/nodata.svg'
 
 
 export const Dashboard = ({isAuth, setIsAuth}) => {
@@ -51,12 +52,12 @@ export const Dashboard = ({isAuth, setIsAuth}) => {
 
             api.post('users/techs', {title, status}, {
                 headers: {Authorization : `Bearer ${token}`}
-            }).then(response => {
+            }).then(_ => {
                 toast.success("Tecnologia adicionada", {autoClose: 2000});
                 retrieveDataFromApi();
                 
-            }).catch(error => {
-                toast.error("Houve um erro ao adicionar tecnlogia", {autoClose: 2000});
+            }).catch(_ => {
+                toast.error("Já existe uma tecnologia com o mesmo nome", {autoClose: 2000});
             })
            
         } else {
@@ -119,15 +120,25 @@ export const Dashboard = ({isAuth, setIsAuth}) => {
                         </div>
                     </TechForm>
                    <div className='tech_wrapper'>
-                   {userTechs.map(({title, status, id})=>{
-                       return (
-                            <TechCard key={id}>
-                               <h3>{title}</h3>
-                               <p>{status}</p>
-                               <CardButton onClick={()=> handleRemoveTech(id)}>Remover</CardButton>
-                            </TechCard>
-                       )
-                   })}
+                   {userTechs.length > 0 ? (
+                       userTechs.map(({title, status, id})=>{
+                        return (
+                             <TechCard key={id}>
+                                <h3>{title}</h3>
+                                <p>{status}</p>
+                                <CardButton onClick={()=> handleRemoveTech(id)}>Remover</CardButton>
+                             </TechCard>
+                        )
+                    })
+                   ) : (
+                        <div>
+                            <img src={noDataImg} alt="" /> 
+                            <div className='no_data_msg'>
+                                <p>Ops, parece não há nenhuma tecnologia cadastrada...</p>
+                                <p>Que tal adicionar uma agora?</p>
+                            </div>
+                        </div>
+                   )}
                    </div>
                 </TechContainer>
             </Container>
