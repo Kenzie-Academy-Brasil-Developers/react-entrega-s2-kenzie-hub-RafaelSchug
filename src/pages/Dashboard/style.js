@@ -153,6 +153,12 @@ export const TechContainer = styled.div`
             }
         }
     }
+
+    @media screen and (max-width: 600px){
+        .tech_wrapper div {
+            flex: 1;
+        }
+    }
     
 `
 
@@ -186,6 +192,15 @@ export const TechForm = styled.div`
         color: white;
         font-weight: bold;
         padding: 0 10px;
+        height: 30px;
+    }
+
+    button:hover {
+        background: var(--defaulthoverblue);
+    }
+
+    button:active {
+        background: var(--defaultactiveblue);
     }
 
     @media screen and (max-width: 600px){
@@ -216,12 +231,16 @@ export const CardButton = styled.button`
 
     width: 200px;
     height: 30px;
-    background: #fd4b4b;
+    background: var(--defaultred);
     color: white;
     font-weight: bold;
 
+    :hover {
+        background: var(--defaulthoverred);
+    }
+
     :active {
-        background: gray;
+        background: var(--defaultactivered);
     }
 
 `

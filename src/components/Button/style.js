@@ -8,7 +8,13 @@ height: 40px;
 background: var(--defaultblue);
 color: white;
 
+:hover {
+    background: var(--defaulthoverblue);
+}
 
+:active {
+    background: var(--defaultactiveblue);
+}
 
 
 `
