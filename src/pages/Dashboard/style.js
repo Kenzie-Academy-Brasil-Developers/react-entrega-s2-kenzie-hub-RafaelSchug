@@ -5,6 +5,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 0 20px;
     padding-bottom: 20px;
 
 `
@@ -111,6 +112,7 @@ export const TechContainer = styled.div`
         padding: 10px;
         width: 100%;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
         
@@ -184,6 +186,14 @@ export const TechForm = styled.div`
         color: white;
         font-weight: bold;
         padding: 0 10px;
+    }
+
+    @media screen and (max-width: 600px){
+        width: 80%;
+        min-width: 250px;
+        form {
+            flex-direction: column;
+        }
     }
 
 `

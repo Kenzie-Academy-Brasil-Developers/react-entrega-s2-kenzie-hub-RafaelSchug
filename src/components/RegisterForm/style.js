@@ -70,6 +70,15 @@ form {
         background: white;
     }
 
+    .login_register_switch {
+        width: 100%;
+        align-items: center;
+        
+        a {
+            color: var(--defaultblue);
+        }
+    }
+
 }
 
 `

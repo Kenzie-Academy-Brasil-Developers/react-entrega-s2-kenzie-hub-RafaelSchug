@@ -10,6 +10,7 @@ height: calc(100vh - 60px);
 max-width: 1000px;
 margin: 0 auto;
 overflow-x: hidden;
+padding: 0 20px;
 
 > div {
     flex: 1;

@@ -6,6 +6,7 @@ import * as yup from 'yup';
 import api from '../../services/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Link} from 'react-router-dom';
 
 
 const RegisterForm = ({setIsAuth}) => {
@@ -87,7 +88,11 @@ const RegisterForm = ({setIsAuth}) => {
                     </select>
                     {errors.course_module && <span>{errors.course_module.message}</span>}
                 </div>
-                <Button>Login</Button>
+                <Button>Cadastrar</Button>
+                <div className='login_register_switch'>
+                    <p>Já possui uma conta?</p>
+                    <Link to='/'>Faça login</Link>
+                </div>
             </form>
         </Container>
     )

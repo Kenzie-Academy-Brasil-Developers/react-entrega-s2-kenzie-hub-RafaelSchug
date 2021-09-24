@@ -24,6 +24,7 @@ export default createGlobalStyle`
 
     body {
         background: #f0f2f5;
+        min-width: 320px;
     }
 
     button {

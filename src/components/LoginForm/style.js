@@ -42,6 +42,15 @@ form {
         padding: 4px 0;
     }
 
+    .login_register_switch {
+        width: 100%;
+        align-items: center;
+        
+        a {
+            color: var(--defaultblue);
+        }
+    }
+
 
     input {
         min-width: 250px;

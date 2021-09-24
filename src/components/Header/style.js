@@ -33,6 +33,12 @@ const Container = styled.div`
         margin-left: 20px;
     }
 
+    @media screen and (max-width: 500px){
+        a, h3 {
+            font-size: 12px;
+        }
+    }
+
 `
 
 export default Container;
