@@ -4,8 +4,7 @@ import { useForm } from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import api from '../../services/api';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import {Link} from 'react-router-dom';
 
 
@@ -50,7 +49,6 @@ const RegisterForm = ({setIsAuth}) => {
 
     return (
         <Container>
-            <ToastContainer/>
             <form onSubmit={handleSubmit(handleFormSubmit)}>
                 <h2>Cadastrar</h2>
                 <div>

@@ -4,12 +4,12 @@ import {Container, BasicInfoCard, TechContainer, TechCard, CardButton, TechForm}
 import {useEffect, useState} from 'react';
 import api from "../../services/api";
 import {useForm} from 'react-hook-form';
-import {ToastContainer, toast} from 'react-toastify';
 import emailIcon from '../../assets/icons/email.png'
 import moduleIcon from '../../assets/icons/module.png'
 import contactIcon from '../../assets/icons/contact.png'
 import biographyIcon from '../../assets/icons/biography.png'
 import noDataImg from '../../assets/imgs/nodata.svg'
+import { toast } from "react-toastify";
 
 
 export const Dashboard = ({isAuth, setIsAuth}) => {
@@ -44,6 +44,7 @@ export const Dashboard = ({isAuth, setIsAuth}) => {
     const handleLogout = event => {
         event.preventDefault();
         localStorage.clear();
+        toast.success('Logout efetuado com sucesso', {autoClose : 2500});
         setIsAuth(false);
     }
 
@@ -102,7 +103,6 @@ export const Dashboard = ({isAuth, setIsAuth}) => {
 
     return (
         <>
-            <ToastContainer/>
             <Header>
                <a href="/" onClick={handleLogout}>Logout</a>
             </Header>

@@ -4,9 +4,9 @@ import { useForm } from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import api from '../../services/api';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginForm = ({setIsAuth}) => {
 
@@ -18,10 +18,12 @@ const LoginForm = ({setIsAuth}) => {
     const {register, handleSubmit, formState : {errors}} = useForm({resolver: yupResolver(schema)})
 
     const handleFormSubmit = (data) => {
+        toast.info('Conectando-se à Kenziehub...', {autoClose : 2500});
         api.post('/sessions', data)
         .then(response => {
             localStorage.setItem("@kenziehubapi:token", response.data.token)
             localStorage.setItem("@kenziehubapi:userId", response.data.user.id)
+            toast.success('Login efetuado com sucesso', {autoClose : 2500});
             return setIsAuth(true);
         })
         .catch(_ => {
@@ -31,7 +33,6 @@ const LoginForm = ({setIsAuth}) => {
 
     return (
         <Container>
-            <ToastContainer/>
             <form onSubmit={handleSubmit(handleFormSubmit)}>
                 <h2>Login</h2>
                 <div>

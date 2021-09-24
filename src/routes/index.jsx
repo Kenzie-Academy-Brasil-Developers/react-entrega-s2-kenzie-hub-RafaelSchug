@@ -21,13 +21,13 @@ export const Routes = () => {
     return (
         <Switch>
             <Route exact path='/'>
-                <Login isAuth={isAuth} setIsAuth={setIsAuth} ></Login>
+                <Login isAuth={isAuth} setIsAuth={setIsAuth}></Login>
             </Route>
             <Route exact path = '/register'>
                 <Register isAuth={isAuth} setIsAuth={setIsAuth}></Register>
             </Route>
             <Route exact path = '/dashboard' >
-                <Dashboard isAuth={isAuth} setIsAuth={setIsAuth} ></Dashboard>
+                <Dashboard isAuth={isAuth} setIsAuth={setIsAuth}></Dashboard>
             </Route>
         </Switch>
     )
