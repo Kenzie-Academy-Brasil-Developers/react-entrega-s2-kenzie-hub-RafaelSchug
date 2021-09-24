@@ -9,6 +9,7 @@ align-items: center;
 height: calc(100vh - 60px);
 max-width: 1000px;
 margin: 0 auto;
+overflow-x: hidden;
 
 > div {
     flex: 1;

@@ -22,7 +22,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content:center;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
 
     h2 {
@@ -48,7 +48,26 @@ form {
         border: var(--defaultborder);
         height: 40px;
         padding: 0 5px;
+       
     }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    }
+
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
+
+    select {
+        min-width: 250px;
+        line-height: 30px;
+        height: 30px;
+        border: var(--defaultborder);
+        background: white;
+    }
+
 }
 
 `

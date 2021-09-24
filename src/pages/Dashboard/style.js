@@ -9,11 +9,22 @@ export const Container = styled.div`
 `
 
 export const BasicInfoCard = styled.div`
+
+    @keyframes basic_card_anim {
+        from {
+            opacity: 0;
+            transform: translateX(-100px)
+        }
+    }
+
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+    animation: basic_card_anim .5s 1 ease-in-out;
+
+
 
     > h1 {
         font-weight: 500;
@@ -64,6 +75,13 @@ export const BasicInfoCard = styled.div`
 `
 
 export const TechContainer = styled.div`
+     @keyframes tech_cont_anim {
+        from {
+            opacity: 0;
+            transform: translateX(100px)
+        }
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,6 +91,7 @@ export const TechContainer = styled.div`
     border: var(--defaultborder);
     box-shadow: var(--defaultboxshadow);
     background: white;
+    animation: tech_cont_anim .5s 1 ease-in-out;
 
 
     > h3 {

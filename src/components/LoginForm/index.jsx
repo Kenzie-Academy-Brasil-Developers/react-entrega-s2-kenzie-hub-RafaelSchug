@@ -39,11 +39,11 @@ const LoginForm = ({setIsAuth}) => {
             <form onSubmit={handleSubmit(handleFormSubmit)}>
                 <h2>Login</h2>
                 <div>
-                    <input type="email" placeholder="Email" {...register('email')}/>
+                    <input autoComplete='true' type="text" placeholder="Email" {...register('email')}/>
                     {errors.email && <span>{errors.email.message}</span>}
                 </div>
                 <div>
-                    <input type="password" placeholder="Senha" {...register('password')}/>
+                    <input autoComplete='true' type="password" placeholder="Senha" {...register('password')}/>
                     {errors.password && <span>{errors.password.message}</span>}
                 </div>
                 <Button>Login</Button>
