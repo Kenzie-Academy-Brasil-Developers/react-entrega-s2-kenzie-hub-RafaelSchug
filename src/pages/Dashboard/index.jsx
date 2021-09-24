@@ -73,7 +73,30 @@ export const Dashboard = ({isAuth, setIsAuth}) => {
             setUserTechs(userTechs.filter(item => item.id !== tech_id));
             toast.success("Tecnologia removida", {autoClose: 2000})
         })
-        .catch(_ => toast.error("Houve um erro ao remover tecnlogia", {autoClose: 2000}))
+        .catch(_ => toast.error("Houve um erro ao remover a tecnologia", {autoClose: 2000}))
+        
+    }
+
+    const formatDate = (date) => {
+        const daysOfWeek = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+
+        let parsedDate = Date.parse(date);
+        parsedDate = new Date(parsedDate);
+
+        const objectDate = {
+            date: parsedDate.getDate().toLocaleString('pt-BR', {minimumIntegerDigits: 2}),
+            day: parsedDate.getDay().toLocaleString('pt-BR', {minimumIntegerDigits: 2}),
+            month: (parsedDate.getMonth() + 1).toLocaleString('pt-BR', {minimumIntegerDigits: 2}),
+            year: parsedDate.getFullYear(),
+            dayOfWeek : daysOfWeek[parsedDate.getDay()],
+            hour: parsedDate.getHours().toLocaleString('pt-BR', {minimumIntegerDigits: 2}),
+            minutes: parsedDate.getMinutes().toLocaleString('pt-BR', {minimumIntegerDigits: 2}),
+            seconds: parsedDate.getSeconds().toLocaleString('pt-BR', {minimumIntegerDigits: 2}),
+            formatedDate: `${parsedDate.getDate().toLocaleString('pt-BR', {minimumIntegerDigits: 2})}/${(parsedDate.getMonth() + 1).toLocaleString('pt-BR', {minimumIntegerDigits: 2})}/${parsedDate.getFullYear()}`,
+            formatedTime: `${parsedDate.getHours().toLocaleString('pt-BR', {minimumIntegerDigits: 2})}:${parsedDate.getMinutes().toLocaleString('pt-BR', {minimumIntegerDigits: 2})}:${parsedDate.getSeconds().toLocaleString('pt-BR', {minimumIntegerDigits: 2})}`,
+        }
+
+        return objectDate;
         
     }
 
@@ -121,11 +144,19 @@ export const Dashboard = ({isAuth, setIsAuth}) => {
                     </TechForm>
                    <div className='tech_wrapper'>
                    {userTechs.length > 0 ? (
-                       userTechs.map(({title, status, id})=>{
+                       userTechs.map(({title, status, id, created_at})=>{
+   
+                        const {dayOfWeek, formatedDate: formDate, formatedTime: formTime} = formatDate(created_at);
+
                         return (
                              <TechCard key={id}>
                                 <h3>{title}</h3>
-                                <p>{status}</p>
+                                <p>Status: {status}</p>
+                                <div className='created_at'>
+                                    <p>Criado em:</p>
+                                    <p>{formDate} às {formTime}</p>
+                                    <p>{dayOfWeek}</p>
+                                </div>
                                 <CardButton onClick={()=> handleRemoveTech(id)}>Remover</CardButton>
                              </TechCard>
                         )
@@ -134,7 +165,7 @@ export const Dashboard = ({isAuth, setIsAuth}) => {
                         <div>
                             <img src={noDataImg} alt="" /> 
                             <div className='no_data_msg'>
-                                <p>Ops, parece não há nenhuma tecnologia cadastrada...</p>
+                                <p>Ops, parece que não há nenhuma tecnologia cadastrada...</p>
                                 <p>Que tal adicionar uma agora?</p>
                             </div>
                         </div>

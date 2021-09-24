@@ -225,6 +225,11 @@ export const TechCard = styled.div`
         margin: 5px;
     }
 
+    .created_at {
+        color: var(--defaultgray);
+        font-variant: all-petite-caps;
+    }
+
 `
 
 export const CardButton = styled.button`
